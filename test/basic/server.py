@@ -3,9 +3,9 @@ from web3 import Web3, HTTPProvider
 import time
 import threading
 from web3.utils.events import get_event_data
-from hello_config import ContractAddress
+from config import ContractAddress
 
-abiFile = "../../build/contracts/Hello.json"
+abiFile = "../../build/contracts/Basic.json"
 with open(abiFile, 'r') as abiDefinition:
     abiJson = json.load(abiDefinition)
 

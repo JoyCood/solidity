@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 //pragma experimental ABIEncoderV2; //打开实验性的功能特性
 
-contract Hello {
+contract Basic {
 	uint x = 10;
 	uint y = x; //值的拷贝 (非引用，示例:t7() )
 

@@ -1,0 +1,22 @@
+pragma solidity 0.4.24;
+
+import 'D.sol';
+
+contract F {
+
+	function f1(D _d) public pure {
+        _d.d1();	
+	}
+    
+	//因为数据类型E已经在D.sol引入了，所以这里不会报错
+	function f2(E _e) public pure {
+	    _e.e1();
+	}
+   
+   /**
+    //K类型不存在
+	function f3(K _k) public pure {
+	    _k. k1();
+	}
+   */
+}

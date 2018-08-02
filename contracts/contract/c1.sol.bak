@@ -1,4 +1,5 @@
 pragma solidity ^0.4.24;
+
 /**
  * library
  * - 不允许定义payable函数
@@ -43,20 +44,20 @@ contract ContractName {
  *   通过ABI调用外部合约是比较合适的调用方式，当然
  *   如果不想通过ABI也是可以调用外部合约的，比如通过call的方式
  */
-contract Hello {
+contract Basic{
     function t21(uint) external pure {}
 	function t22() public pure returns (uint) {} 
 	function t23() public pure returns (address) {}
 }
 
 contract Transaction {
-	Hello private hello;
+	Basic private basic;
 
     event SenderLogger(address sender);
 	event ValueLogger(uint value);
 	event BalanceLogger(uint balance);
-	event HelloValueLogger(uint helloValue);
-	event HelloSenderLogger(address sender);
+	event BasicValueLogger(uint helloValue);
+	event BasicSenderLogger(address sender);
 
 	address private owner;
 
@@ -70,9 +71,9 @@ contract Transaction {
 		_;
 	}
 
-	constructor(address HelloAddress) public {
+	constructor(address BasicAddress) public {
 	    owner = msg.sender;
-		hello = Hello(HelloAddress);
+		basic = Basic(BasicAddress);
         //Token token = Token(msg.sender);
 		//token.transfer(msg.sender, 100000000);
 	}
@@ -82,8 +83,8 @@ contract Transaction {
 	 * - 此种调用方式遵循了ABI规范，是比较正规安全的调用方式
 	 * - 给普通函数加上payable关键字表明此函数具有接收代币的功能
 	 */
-	function setValueToHelloContract(uint _value) external payable {
-		hello.t21(_value);
+	function setValueToBasicContract(uint _value) external payable {
+		basic.t21(_value);
 		emit BalanceLogger(address(this).balance);
 	}
 
@@ -94,18 +95,18 @@ contract Transaction {
 	 *   只是从本地读取数据并返回
 	 * - Web3的call方法不能改变数据，亦不会消耗gas, 不会对网络广播
 	 */
-	function getValueFromHelloContract() public returns (uint) {
-	    uint value = hello.t22();
-		emit HelloValueLogger(value);
+	function getValueFromBasicContract() public returns (uint) {
+	    uint value = basic.t22();
+		emit BasicValueLogger(value);
 		return value;
 	}
 
 	/**
 	 * 测试调用外部合约返回的msg.sender是合约地址还是用户地址
 	 */
-	function getSenderFromHelloContract() public returns (address) {
-        address sender = hello.t23(); //实验证明，返回的是本合约地址	
-		emit HelloSenderLogger(sender);
+	function getSenderFromBasicContract() public returns (address) {
+        address sender = basic.t23(); //实验证明，返回的是本合约地址	
+		emit BasicSenderLogger(sender);
 		return sender;
 	}
 
@@ -113,14 +114,14 @@ contract Transaction {
 	 * 不通过ABI规范的方式调用外部合约
 	 * - 无法取得被调用合约的返回值(除非用汇编指令)
 	 */
-	function getValueFromHelloContractWithoutABI() public returns (uint) {
+	function getValueFromBasicContractWithoutABI() public returns (uint) {
 		//这行演示调用外部合约中一个不存在的函数也会返回成功
-        //if(address(hello).call(bytes4(keccak256("t203()"))))
+        //if(address(basic).call(bytes4(keccak256("t203()"))))
 		//    emit SenderLogger(msg.sender);
 
 		//call()、send()、delegatecall()、callcode()
 		//函数在失败时不会抛出异常，而是会返回false
-		if(!address(hello).call(bytes4(keccak256("t23"))))
+		if(!address(basic).call(bytes4(keccak256("t23"))))
 			revert();
 
 		return 1;
@@ -132,15 +133,15 @@ contract Transaction {
 	 * 参考资料:
      *   https://ethereum.stackexchange.com/questions/38387/contract-address-transfer-method-gas-cost
 	 */
-	function sendEtherToHelloContract() public {
+	function sendEtherToBasicContract() public {
         //如果异常会回滚，会导致当前合约抛出异常并停止往下执行. 不能设置gas(默认2300)	
-        address(hello).transfer(100000000); 
+        address(basic).transfer(100000000); 
         
 		//如果失败会返回false，不回滚, 不会导致本合约异常终止.不能设置gas（默认2300）
-		require(address(hello).send(200000000)); 
+		require(address(basic).send(200000000)); 
 
 		//这种方式具有被调用合约反调用的风险。可以设置gas
-		if(!address(hello).call.value(300000000).gas(6000)())
+		if(!address(basic).call.value(300000000).gas(6000)())
 		   revert();	
 
 		emit BalanceLogger(address(this).balance);
