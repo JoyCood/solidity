@@ -1,0 +1,289 @@
+{
+  "contractName": "F",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_d",
+          "type": "address"
+        }
+      ],
+      "name": "f",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50609f8061001e6000396000f300608060405260043610603e5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663fc68521a81146043575b600080fd5b348015604e57600080fd5b50606e73ffffffffffffffffffffffffffffffffffffffff600435166070565b005b505600a165627a7a72305820b71d9f875741995aa6d222db380895f8aa4f01cf3cbc8978b4770cda4086f6070029",
+  "deployedBytecode": "0x608060405260043610603e5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663fc68521a81146043575b600080fd5b348015604e57600080fd5b50606e73ffffffffffffffffffffffffffffffffffffffff600435166070565b005b505600a165627a7a72305820b71d9f875741995aa6d222db380895f8aa4f01cf3cbc8978b4770cda4086f6070029",
+  "sourceMap": "58:52:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;58:52:1;;;;;;;",
+  "deployedSourceMap": "58:52:1:-;;;;;;;;;;;;;;;;;;;;;;;73:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;73:35:1;;;;;;;;;;;:::o",
+  "source": "pragma solidity 0.4.24;\n\nimport 'E.sol';\nimport 'D.sol';\n\ncontract F {\n\n\tfunction f(D _d) public pure {\n\t\n\t}\n}\n",
+  "sourcePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/F.sol",
+  "ast": {
+    "absolutePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/F.sol",
+    "exportedSymbols": {
+      "F": [
+        17
+      ]
+    },
+    "id": 18,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "E.sol",
+        "file": "E.sol",
+        "id": 9,
+        "nodeType": "ImportDirective",
+        "scope": 18,
+        "sourceUnit": 33,
+        "src": "25:15:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "D.sol",
+        "file": "D.sol",
+        "id": 10,
+        "nodeType": "ImportDirective",
+        "scope": 18,
+        "sourceUnit": 25,
+        "src": "41:15:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 17,
+        "linearizedBaseContracts": [
+          17
+        ],
+        "name": "F",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 15,
+              "nodeType": "Block",
+              "src": "102:6:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 16,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "f",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12,
+                  "name": "_d",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16,
+                  "src": "84:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_D_$24",
+                    "typeString": "contract D"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 11,
+                    "name": "D",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 24,
+                    "src": "84:1:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_D_$24",
+                      "typeString": "contract D"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "83:6:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "102:0:1"
+            },
+            "scope": 17,
+            "src": "73:35:1",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 18,
+        "src": "58:52:1"
+      }
+    ],
+    "src": "0:111:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/F.sol",
+    "exportedSymbols": {
+      "F": [
+        17
+      ]
+    },
+    "id": 18,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "E.sol",
+        "file": "E.sol",
+        "id": 9,
+        "nodeType": "ImportDirective",
+        "scope": 18,
+        "sourceUnit": 33,
+        "src": "25:15:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "D.sol",
+        "file": "D.sol",
+        "id": 10,
+        "nodeType": "ImportDirective",
+        "scope": 18,
+        "sourceUnit": 25,
+        "src": "41:15:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 17,
+        "linearizedBaseContracts": [
+          17
+        ],
+        "name": "F",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 15,
+              "nodeType": "Block",
+              "src": "102:6:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 16,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "f",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12,
+                  "name": "_d",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16,
+                  "src": "84:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_D_$24",
+                    "typeString": "contract D"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 11,
+                    "name": "D",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 24,
+                    "src": "84:1:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_D_$24",
+                      "typeString": "contract D"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "83:6:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "102:0:1"
+            },
+            "scope": 17,
+            "src": "73:35:1",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 18,
+        "src": "58:52:1"
+      }
+    ],
+    "src": "0:111:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "2018": {
+      "events": {},
+      "links": {},
+      "address": "0x12fada0901c00d7ee86d5363b2435c634e2f8ec9",
+      "transactionHash": "0x443a5ef88ada868e055f594086e530ec37556bf6717bae699266d569abf9e13e"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-08-02T06:52:41.149Z"
+}

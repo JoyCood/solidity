@@ -1,0 +1,175 @@
+{
+  "contractName": "D",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "d",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060858061001e6000396000f300608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416638a054ac281146043575b600080fd5b348015604e57600080fd5b5060556057565b005b5600a165627a7a72305820acfb336c3ee245bdcd4f0da0a563f47f0302ae997b2936043dcd8516164495250029",
+  "deployedBytecode": "0x608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416638a054ac281146043575b600080fd5b348015604e57600080fd5b5060556057565b005b5600a165627a7a72305820acfb336c3ee245bdcd4f0da0a563f47f0302ae997b2936043dcd8516164495250029",
+  "sourceMap": "25:48:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:48:2;;;;;;;",
+  "deployedSourceMap": "25:48:2:-;;;;;;;;;;;;;;;;;;;;;;;40:31;;8:9:-1;5:2;;;30:1;27;20:12;5:2;40:31:2;;;;;;;:::o",
+  "source": "pragma solidity 0.4.24;\n\ncontract D {\n\n\tfunction d() public pure {\n\t\n\t}\n}\n",
+  "sourcePath": "D.sol",
+  "ast": {
+    "absolutePath": "D.sol",
+    "exportedSymbols": {
+      "D": [
+        24
+      ]
+    },
+    "id": 25,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 19,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 24,
+        "linearizedBaseContracts": [
+          24
+        ],
+        "name": "D",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 22,
+              "nodeType": "Block",
+              "src": "65:6:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 23,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "d",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 20,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "50:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "65:0:2"
+            },
+            "scope": 24,
+            "src": "40:31:2",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 25,
+        "src": "25:48:2"
+      }
+    ],
+    "src": "0:74:2"
+  },
+  "legacyAST": {
+    "absolutePath": "D.sol",
+    "exportedSymbols": {
+      "D": [
+        24
+      ]
+    },
+    "id": 25,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 19,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 24,
+        "linearizedBaseContracts": [
+          24
+        ],
+        "name": "D",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 22,
+              "nodeType": "Block",
+              "src": "65:6:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 23,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "d",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 20,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "50:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "65:0:2"
+            },
+            "scope": 24,
+            "src": "40:31:2",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 25,
+        "src": "25:48:2"
+      }
+    ],
+    "src": "0:74:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-08-02T06:52:40.282Z"
+}

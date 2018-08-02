@@ -1,0 +1,779 @@
+{
+  "contractName": "C",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "b",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_b",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "c1",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516020806101fb833981016040525160008054600160a060020a03909216600160a060020a03199092169190911790556101a9806100526000396000f30060806040526004361061004b5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416634df7e3d0811461005057806366eb10361461008e575b600080fd5b34801561005c57600080fd5b506100656100a8565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b34801561009a57600080fd5b506100a66004356100c4565b005b60005473ffffffffffffffffffffffffffffffffffffffff1681565b600054604080517f2fc0e82700000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff9092166004830152602482018390525173__A_____________________________________91632fc0e827916044808301926020929190829003018186803b15801561014e57600080fd5b505af4158015610162573d6000803e3d6000fd5b505050506040513d602081101561017857600080fd5b5050505600a165627a7a72305820bddc8b5aa7578b230370b1a7bdd85e504dbc838ed480360e409d5d13b0d131860029",
+  "deployedBytecode": "0x60806040526004361061004b5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416634df7e3d0811461005057806366eb10361461008e575b600080fd5b34801561005c57600080fd5b506100656100a8565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b34801561009a57600080fd5b506100a66004356100c4565b005b60005473ffffffffffffffffffffffffffffffffffffffff1681565b600054604080517f2fc0e82700000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff9092166004830152602482018390525173__A_____________________________________91632fc0e827916044808301926020929190829003018186803b15801561014e57600080fd5b505af4158015610162573d6000803e3d6000fd5b505050506040513d602081101561017857600080fd5b5050505600a165627a7a72305820bddc8b5aa7578b230370b1a7bdd85e504dbc838ed480360e409d5d13b0d131860029",
+  "sourceMap": "62:152:2:-;;;109:42;8:9:-1;5:2;;;30:1;27;20:12;5:2;109:42:2;;;;;;;;;;;;;141:1;:6;;-1:-1:-1;;;;;141:6:2;;;-1:-1:-1;;;;;;141:6:2;;;;;;;;;62:152;;;;;;",
+  "deployedSourceMap": "62:152:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;95:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;95:10:2;;;;;;;;;;;;;;;;;;;;;;;154:58;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;154:58:2;;;;;;;95:10;;;;;;:::o;154:58::-;196:1;;:12;;;;;;:1;;;;:12;;;;;;;;;;;:4;;;;:12;;;;;;;;;;;;;;:4;:12;;;5:2:-1;;;;30:1;27;20:12;5:2;196:12:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;196:12:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;154:58:2:o",
+  "source": "pragma solidity 0.4.24;\n\nimport './A.sol';\nimport './B.sol';\n\ncontract C {\n    using A for B;\n\tB public b;\n\n\tconstructor(B _b) public {\n\t    b = _b;\n\t}\n\n\tfunction c1(uint256 _value) public {\n\t    b.a1(_value);\n\t}\n}\n",
+  "sourcePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/C.sol",
+  "ast": {
+    "absolutePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/C.sol",
+    "exportedSymbols": {
+      "C": [
+        67
+      ]
+    },
+    "id": 68,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 37,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/A.sol",
+        "file": "./A.sol",
+        "id": 38,
+        "nodeType": "ImportDirective",
+        "scope": 68,
+        "sourceUnit": 19,
+        "src": "25:17:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/B.sol",
+        "file": "./B.sol",
+        "id": 39,
+        "nodeType": "ImportDirective",
+        "scope": 68,
+        "sourceUnit": 36,
+        "src": "43:17:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 67,
+        "linearizedBaseContracts": [
+          67
+        ],
+        "name": "C",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 42,
+            "libraryName": {
+              "contractScope": null,
+              "id": 40,
+              "name": "A",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 18,
+              "src": "85:1:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_A_$18",
+                "typeString": "library A"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "79:14:2",
+            "typeName": {
+              "contractScope": null,
+              "id": 41,
+              "name": "B",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 35,
+              "src": "91:1:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_B_$35",
+                "typeString": "contract B"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 44,
+            "name": "b",
+            "nodeType": "VariableDeclaration",
+            "scope": 67,
+            "src": "95:10:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_B_$35",
+              "typeString": "contract B"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 43,
+              "name": "B",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 35,
+              "src": "95:1:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_B_$35",
+                "typeString": "contract B"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 53,
+              "nodeType": "Block",
+              "src": "134:17:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 51,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 49,
+                      "name": "b",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 44,
+                      "src": "141:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_B_$35",
+                        "typeString": "contract B"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 50,
+                      "name": "_b",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46,
+                      "src": "145:2:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_B_$35",
+                        "typeString": "contract B"
+                      }
+                    },
+                    "src": "141:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_B_$35",
+                      "typeString": "contract B"
+                    }
+                  },
+                  "id": 52,
+                  "nodeType": "ExpressionStatement",
+                  "src": "141:6:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 54,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 47,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46,
+                  "name": "_b",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 54,
+                  "src": "121:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_B_$35",
+                    "typeString": "contract B"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 45,
+                    "name": "B",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 35,
+                    "src": "121:1:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_B_$35",
+                      "typeString": "contract B"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "120:6:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 48,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "134:0:2"
+            },
+            "scope": 67,
+            "src": "109:42:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 65,
+              "nodeType": "Block",
+              "src": "189:23:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 62,
+                        "name": "_value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 56,
+                        "src": "201:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 59,
+                        "name": "b",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 44,
+                        "src": "196:1:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_B_$35",
+                          "typeString": "contract B"
+                        }
+                      },
+                      "id": 61,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "a1",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17,
+                      "src": "196:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_contract$_B_$35_$_t_uint256_$returns$_t_uint256_$bound_to$_t_contract$_B_$35_$",
+                        "typeString": "function (contract B,uint256) returns (uint256)"
+                      }
+                    },
+                    "id": 63,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "196:12:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 64,
+                  "nodeType": "ExpressionStatement",
+                  "src": "196:12:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 66,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "c1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 57,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 56,
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 66,
+                  "src": "166:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 55,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "165:16:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 58,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:0:2"
+            },
+            "scope": 67,
+            "src": "154:58:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 68,
+        "src": "62:152:2"
+      }
+    ],
+    "src": "0:215:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/C.sol",
+    "exportedSymbols": {
+      "C": [
+        67
+      ]
+    },
+    "id": 68,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 37,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/A.sol",
+        "file": "./A.sol",
+        "id": 38,
+        "nodeType": "ImportDirective",
+        "scope": 68,
+        "sourceUnit": 19,
+        "src": "25:17:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/knight/Documents/geth/smart-contracts/hello/contracts/library/B.sol",
+        "file": "./B.sol",
+        "id": 39,
+        "nodeType": "ImportDirective",
+        "scope": 68,
+        "sourceUnit": 36,
+        "src": "43:17:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 67,
+        "linearizedBaseContracts": [
+          67
+        ],
+        "name": "C",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 42,
+            "libraryName": {
+              "contractScope": null,
+              "id": 40,
+              "name": "A",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 18,
+              "src": "85:1:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_A_$18",
+                "typeString": "library A"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "79:14:2",
+            "typeName": {
+              "contractScope": null,
+              "id": 41,
+              "name": "B",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 35,
+              "src": "91:1:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_B_$35",
+                "typeString": "contract B"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 44,
+            "name": "b",
+            "nodeType": "VariableDeclaration",
+            "scope": 67,
+            "src": "95:10:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_B_$35",
+              "typeString": "contract B"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 43,
+              "name": "B",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 35,
+              "src": "95:1:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_B_$35",
+                "typeString": "contract B"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 53,
+              "nodeType": "Block",
+              "src": "134:17:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 51,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 49,
+                      "name": "b",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 44,
+                      "src": "141:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_B_$35",
+                        "typeString": "contract B"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 50,
+                      "name": "_b",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46,
+                      "src": "145:2:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_B_$35",
+                        "typeString": "contract B"
+                      }
+                    },
+                    "src": "141:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_B_$35",
+                      "typeString": "contract B"
+                    }
+                  },
+                  "id": 52,
+                  "nodeType": "ExpressionStatement",
+                  "src": "141:6:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 54,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 47,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46,
+                  "name": "_b",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 54,
+                  "src": "121:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_B_$35",
+                    "typeString": "contract B"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 45,
+                    "name": "B",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 35,
+                    "src": "121:1:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_B_$35",
+                      "typeString": "contract B"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "120:6:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 48,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "134:0:2"
+            },
+            "scope": 67,
+            "src": "109:42:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 65,
+              "nodeType": "Block",
+              "src": "189:23:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 62,
+                        "name": "_value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 56,
+                        "src": "201:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 59,
+                        "name": "b",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 44,
+                        "src": "196:1:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_B_$35",
+                          "typeString": "contract B"
+                        }
+                      },
+                      "id": 61,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "a1",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17,
+                      "src": "196:4:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_contract$_B_$35_$_t_uint256_$returns$_t_uint256_$bound_to$_t_contract$_B_$35_$",
+                        "typeString": "function (contract B,uint256) returns (uint256)"
+                      }
+                    },
+                    "id": 63,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "196:12:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 64,
+                  "nodeType": "ExpressionStatement",
+                  "src": "196:12:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 66,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "c1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 57,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 56,
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 66,
+                  "src": "166:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 55,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "165:16:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 58,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:0:2"
+            },
+            "scope": 67,
+            "src": "154:58:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 68,
+        "src": "62:152:2"
+      }
+    ],
+    "src": "0:215:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-08-02T06:47:10.967Z"
+}
