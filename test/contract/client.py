@@ -56,7 +56,7 @@ def call_other_contract():
         'value': 1000000000, #发送1000000000个代币给合约
         #'data': 这个参数表示编译过后的合约代码或将被调用合约函数与参数(函数与参数都是签名生成的hash值) 
     }
-    txHash = contract.functions.setValueToHelloContract(99).transact(transaction)
+    txHash = contract.functions.setValueToBasicContract(99).transact(transaction)
     result = w3.eth.waitForTransactionReceipt(txHash)
     print(result)
 
@@ -74,14 +74,14 @@ def get_value_from_other_contract():
         'from': account,
         'gas': 999999
     }
-    txHash = contract.functions.getValueFromHelloContract().transact(transaction)
+    txHash = contract.functions.getValueFromBasicContract().transact(transaction)
     result = w3.eth.waitForTransactionReceipt(txHash)
     print(result)
 
 #本地调用，不广播，读取本地的值,不会消耗gas
 #如果只想读取数据，使用call来节省时间、gas
 def make_call():
-    result = contract.functions.getValueFromHelloContract().call()
+    result = contract.functions.getValueFromBasicContract().call()
     print(result)
 
 def get_sender_from_other_contract():
@@ -89,7 +89,7 @@ def get_sender_from_other_contract():
         'from': account,
         'gas': 999999
     }
-    txHash = contract.functions.getSenderFromHelloContract().transact(transaction)
+    txHash = contract.functions.getSenderFromBasicContract().transact(transaction)
     result = w3.eth.waitForTransactionReceipt(txHash)
     print(result)
 
@@ -98,7 +98,7 @@ def send_ether_to_other_contract():
         'from': account,         
         'gas': 999999
     }
-    txHash = contract.functions.sendEtherToHelloContract().transact(transaction)
+    txHash = contract.functions.sendEtherToBasicContract().transact(transaction)
     result = w3.eth.waitForTransactionReceipt(txHash)
     print(result)
 
@@ -107,23 +107,32 @@ def call_other_contract_without_abi():
         'from': account,
         'gas': 999999
     }
-    txHash = contract.functions.getValueFromHelloContractWithoutABI().transact(transaction)
+    txHash = contract.functions.getValueFromBasicContractWithoutABI().transact(transaction)
     result = w3.eth.waitForTransactionReceipt(txHash)
     print(result)
 
 if __name__ == '__main__':
-    #print()
-    #send_ether_to_contract()
+    print()
+    send_ether_to_contract()
+    
     #print()
     #call_not_exists_function()
-    #call_other_contract()
-    #print()
-    #get_value_from_other_contract()
-    #print()
-    #get_sender_from_other_contract()
-    #print()
-    #make_call()
-    #print()
-    #send_ether_to_other_contract()
+
+    print()
+    call_other_contract()
+
+    print()
+    get_value_from_other_contract()
+
+
+    print()
+    get_sender_from_other_contract()
+    
+    print()
+    make_call()
+
+    print()
+    send_ether_to_other_contract()
+    
     print()
     call_other_contract_without_abi()

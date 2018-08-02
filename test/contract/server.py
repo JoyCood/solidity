@@ -3,7 +3,7 @@ from web3 import Web3, HTTPProvider
 import time
 import threading
 from web3.utils.events import get_event_data
-from c1_config import ContractAddress
+from config import ContractAddress
 
 abiFile = "../../build/contracts/Transaction.json"
 with open(abiFile, 'r') as abiDefinition:
@@ -36,12 +36,12 @@ def balance_logger_event(event):
 
 def hello_value_event(event):
     receipt = get_receipt(event['transactionHash'])
-    receipt = contract.events.HelloValueLogger().processReceipt(receipt)
+    receipt = contract.events.BasicValueLogger().processReceipt(receipt)
     output_event_data(receipt)
 
 def hello_sender_event(event):
     receipt = get_receipt(event['transactionHash'])
-    receipt = contract.events.HelloSenderLogger().processReceipt(receipt)
+    receipt = contract.events.BasicSenderLogger().processReceipt(receipt)
     output_event_data(receipt)
 
 def log_loop(event_filter, poll_interval, handler):
@@ -59,9 +59,9 @@ threading.Thread(target=log_loop, args=(block_filter, 2, value_logger_event)).st
 block_filter = contract.events.BalanceLogger.createFilter(fromBlock='latest')
 threading.Thread(target=log_loop, args=(block_filter, 2, balance_logger_event)).start()
 
-block_filter = contract.events.HelloValueLogger.createFilter(fromBlock='latest')
+block_filter = contract.events.BasicValueLogger.createFilter(fromBlock='latest')
 threading.Thread(target=log_loop, args=(block_filter, 2, hello_value_event)).start()
 
 #调用外部合约并返回调用者帐户地址
-block_filter = contract.events.HelloSenderLogger.createFilter(fromBlock='latest')
+block_filter = contract.events.BasicSenderLogger.createFilter(fromBlock='latest')
 threading.Thread(target=log_loop, args=(block_filter, 2, hello_sender_event)).start()
