@@ -1,2 +1,2 @@
 # solidity
-solidity learning
+solidity lab
