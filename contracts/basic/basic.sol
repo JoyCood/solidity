@@ -14,15 +14,18 @@ contract Basic {
     mapping(uint256 => uint[]) private map2;
 	mapping(uint256 => Person) private map3;
 
+	//声明一种新的数据类型Person
 	struct Person { //不能在这里预设struct类型的默认值
 	    string name;
 		string sex;
 		uint8  age;
 	}
 
-	Person[] person_list;
+    //初始化默认值 
+	Person p = Person({name:'default', sex:'male', age:20});
     
-	Person p;
+	//声明一个数据类型为Person的动长数组
+	Person[] person_list;
 
 	uint private remoteValue;
 

@@ -4,6 +4,8 @@ pragma solidity ^0.4.24;
  * library
  * - 不允许定义payable函数
  * - 不允许定义fallback函数
+ * - 不能接收代币
+ * - 
  */
 
 /**
@@ -32,6 +34,9 @@ interface Token {
 contract ContractName {
     function funName() public returns (bytes32); 
 	function funName2() external returns (bytes32);
+	function funName3() public pure returns (string) {
+	    return "hello world";
+	}
 }
 
 
