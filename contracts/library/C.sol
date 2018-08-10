@@ -1,7 +1,6 @@
 pragma solidity ^0.4.23;
 
 import "./A.sol";
-//import "./B.sol";
 
 contract C {
     using A for B;    

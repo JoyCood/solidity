@@ -58,7 +58,8 @@ library A {
         _value[0] = 10;	
 	}
 
-	function a7(B _b, uint256 _value) public pure returns (uint256) {
+	function a7(B, uint256 _value) public pure returns (uint256) {
+	    //function a7(B _b, uint256 _value)
 	    //return _b.sum(_value); //非法调用
 	    return a7_1(_value);
 	}

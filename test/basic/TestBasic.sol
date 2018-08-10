@@ -13,7 +13,6 @@ contract TestBasic {
 		uint8  age;
 	}
 
-
 	function test_t1() public  {
 	    uint result = basic.t1(1);
 		Assert.equal(1, result, 'result should be equal 1');

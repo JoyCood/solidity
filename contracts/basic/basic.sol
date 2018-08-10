@@ -9,6 +9,7 @@ contract Basic {
 	uint[4] y_array = x_array; //值的拷贝 (非引用，示例:t8() )
 	uint[4] z_array; //定长数组没push及pop方法
 	uint[]  k_array; //动长数组有push、pop方法
+	//uint[4] constant u_array = [1,2,3,4]; //不能定义非值类型的状态常量(TypeError: Constants of non-value type not yet implemented.)
 
 	mapping(uint256 => uint) private map;
     mapping(uint256 => uint[]) private map2;
@@ -29,7 +30,7 @@ contract Basic {
 
 	uint private remoteValue;
 
-	//可以声明事件参数为结构体，实际不能发送结构体类型数据
+	//可以声明事件参数类型为结构体，实际不能发送结构体类型数据
 	event Personx(Person xx);
 	event T22_Logger(uint value);
 	event Fallback_Logger(uint balance);
@@ -37,6 +38,7 @@ contract Basic {
 
 	//构造函数，在布置合约的时候调用，只能调用一次
 	//不支持重载
+	//不能返回值 (不能声明returns语句)
     constructor(uint8 _value) public {
 	    x = _value;
 		//this.t2();//不能在析构函数中使用this关键字，因为此时合约还没完成创建
@@ -117,6 +119,10 @@ contract Basic {
 
 	/**
 	 * 函数重载
+	 * - 可见性可不一致
+	 * - 读写权限可不一致
+	 * - 返回值类型及个数可不一致
+     * - 相当于一个独立的函数
 	 */
 	function t6(int _value) public pure returns (int) {
 	    return _value;
@@ -172,7 +178,11 @@ contract Basic {
 		//uint storage _tmp = 10;
 		//uint memory _tmp = 10;
 
-	    uint[4] storage _value = x_array;
+        y_array = x_array; //值拷贝
+        y_array[0] = 100;
+		y_array[3] = 300;
+
+	    uint[4] storage _value = x_array; //引用
 		_value[0] = 100;
 		_value[3] = 300;
 
@@ -214,7 +224,9 @@ contract Basic {
 
 
 	function t12() public pure returns (uint[]) {
-	   // uint[] memory _value = [uint(1), 2, 3]; //不能通过字面量初始化数组
+
+	   // uint[2] memory _value = [uint256(1), 2]; //可以通过字面量初始化定长数组（数组元素个数必须与数组变量声明长度一致）
+	   // uint[] memory _value  = [uint(1), 2, 3]; //不能通过字面量初始化变长数组
 	   // uint[] storage _value = new uint[](10); //memory数组不能赋值给storage变量 
 
         uint[] memory _value = new uint[](10); //创建10个元素长度的数组，初始值为0	
