@@ -1,5 +1,7 @@
 pragma solidity ^0.4.24;
 
+import "./Inherit_C.sol";
+
 contract Inherit_B {
 	uint256 value = 10;
 

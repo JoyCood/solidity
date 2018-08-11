@@ -54,8 +54,13 @@ def a2():
     result = contract.functions.a2().call()
     logger.info(result)
 
+def c2():
+    result = contract.functions.c2().call()
+    logger.info(result)
+
 if __name__ == '__main__':
     b1()
     b1_1()
     a1()
     a2()
+    c2()

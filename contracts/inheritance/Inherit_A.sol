@@ -2,7 +2,11 @@ pragma solidity ^0.4.24;
 
 import "./Inherit_B.sol";
 
-contract Inherit_A is Inherit_B(88) {
+/**
+ * 参考资料: https://ethereum.stackexchange.com/questions/12920/what-does-the-keyword-super-in-solidity-do
+ */
+
+contract Inherit_A is Inherit_B(88), Inherit_C {
     uint256 value = 55;
 
 	function b1()
@@ -37,5 +41,13 @@ contract Inherit_A is Inherit_B(88) {
 		returns (uint256)
 	{
 	    return Inherit_B.b1(); //返回父合约状态变量value的值: 88
+	}
+
+	//实现抽象合约Inherit_C的c2()方法
+	function c2()
+	    public
+		returns (uint256)
+	{
+        return c1(); //调用Inherit_C中的c1()方法
 	}
 }
