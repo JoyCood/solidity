@@ -21,7 +21,7 @@ DATEFMT = '%Y-%m-%d %H:%M:%S'
 logging.basicConfig(level=LEVEL, format=FORMAT, datefmt=DATEFMT)
 logger = logging.getLogger()
 
-abiFile = "../../build/contracts/Inherit_A.json"
+abiFile = "../../build/contracts/Inherit_D.json"
 with open(abiFile, 'r') as abiDefinition:
     abiJson = json.load(abiDefinition)
 
@@ -34,6 +34,10 @@ contract = w3.eth.contract(
     abi = abiJson['abi']
 )
 w3.eth.defaultAccount = w3.eth.accounts[0]
+
+def output_transaction_result(fun, txHash):
+    receipt = w3.eth.waitForTransactionReceipt(txHash)
+    logger.info(receipt)
 
 def b1():
     transaction = {
@@ -58,9 +62,19 @@ def c2():
     result = contract.functions.c2().call()
     logger.info(result)
 
+def d1():
+    transaction = {
+        'gas': 999999        
+    }
+    #result = contract.functions.d1().transact(transaction)
+    #output_transaction_result('d1', result)
+    result = contract.functions.d1().call()
+    logger.info(result)
+
 if __name__ == '__main__':
-    b1()
-    b1_1()
-    a1()
-    a2()
-    c2()
+    #b1()
+    #b1_1()
+    #a1()
+    #a2()
+    #c2()
+    d1()

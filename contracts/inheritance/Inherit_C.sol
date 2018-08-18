@@ -3,7 +3,8 @@ pragma solidity ^0.4.24;
 contract Inherit_C {
 
 	function c1() 
-	    public
+	    public 
+		pure
 		returns (uint256) 
 	{
         return 222;	

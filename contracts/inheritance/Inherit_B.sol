@@ -25,14 +25,31 @@ contract Inherit_B {
 		return value; 
 	}
 
-	//函数重载返回值类型可以不一致，
-	//函数可见性也可以不一致
-	//相当于一个独立的函数
+	//方法重载返回值类型可以不一致，
+	//方法可见性也可以不一致
+	//相当于一个独立的方法
 	function b1(uint256)
-	    public
+	    internal
 		pure
 		returns (bool)
 	{
 	    return true;
+	}
+    
+    //方法名相同，参数个数或参数类型不同，都属于方法重载	
+	function b1(uint256, bool)
+	    public
+		pure
+		returns (uint256)
+	{
+	    return 654;
+	}
+
+	function c1()
+	    public
+		pure
+		returns (uint256)
+	{
+	    return 345;
 	}
 }
